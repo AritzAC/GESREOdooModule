@@ -3,6 +3,7 @@
 from odoo import api, fields, models
 
 class Cliente(models.Model):
-    _name = 'cliente.cliente'
+    _name = 'gesre.cliente'
+    _inherit = 'res.users'
 
-    fechaRegistro = fields.Date(string="Fecha de Registro", required=True)
+    fechaRegistro = fields.Date.today(string="Fecha de Registro", required=True)

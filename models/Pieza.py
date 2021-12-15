@@ -3,7 +3,7 @@
 from odoo import api, fields, models
 
 class Pieza(models.Model):
-    _name = 'pieza.pieza'
+    _name = 'gesre.pieza'
 
     nombre = fields.Char(string="Nombre", required=True)
     descripcion = fields.Text(string="Descripcion", required=True)
