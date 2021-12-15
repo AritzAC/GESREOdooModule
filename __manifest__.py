@@ -3,14 +3,13 @@
     'name': "GESRE",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Modulo que Gestiona las Reparaciones del Hogar""",
 
     'description': """
         Long description of module's purpose
     """,
 
-    'author': "My Company",
+    'author': "GESRE",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
