@@ -1,3 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from . import models
+
+from . import Incidencia
+from . import Recoge
