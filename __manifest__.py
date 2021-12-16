@@ -6,7 +6,8 @@
         Modulo que Gestiona las Reparaciones del Hogar""",
 
     'description': """
-        Long description of module's purpose
+       Modulo de Gestion de Clientes, Piezas, Trbajadores e Incidencias, en el 
+       que todos los modulos hacen un CRUD(Create Read Update Delete) completo
     """,
 
     'author': "GESRE",
