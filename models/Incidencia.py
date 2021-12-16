@@ -22,3 +22,8 @@ class Incidencia(models.Model):
                                         ('b', 'PROCESO'),
                                         ('c', 'CERRADO')], string="Estado de Incidencia", required="true")                                  
    
+   #Relacion 1 a Muchos con Recoge
+    incidencia = fields.One2Many('gesre.recoge', 'incidencia' , string="Recoge")
+    
+   #Relacion Mucho a 1 con Pieza
+    pieza = fields.Many2One('gesre.pieza', string="Pieza") 
