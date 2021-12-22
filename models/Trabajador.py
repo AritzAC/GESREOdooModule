@@ -4,6 +4,7 @@ from odoo import fields
 from odoo import models
 
 class Trabajador(models.Model):
+    _name = 'gesre.trabajador'
     _inherit = 'res.users'
     
     #Atributos

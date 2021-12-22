@@ -3,6 +3,7 @@ from odoo import fields
 from odoo import models
 
 class Cliente(models.Model):
+    _name = 'gesre.cliente'
     _inherit = 'res.users'
 
     #Atributos
