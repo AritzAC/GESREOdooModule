@@ -3,6 +3,7 @@
 from odoo import fields
 from odoo import models
 
+#Author: Daniel Brizuela
 class Cliente(models.Model):
     _name = 'gesre.cliente'
     _inherit = 'res.users'
@@ -11,5 +12,5 @@ class Cliente(models.Model):
     fechaRegistro = fields.Date.today(string="Fecha de Registro", required=True)
     
     #Relacion 1 a Muchos con Incidencia
-    incidencia = fields.One2Many('gesre.incidencia', string="Incidencia")
+    incidencia = fields.One2Many('gesre.incidencia', 'pieza', string="Incidencia")
     

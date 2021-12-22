@@ -3,6 +3,7 @@
 from odoo import fields
 from odoo import models
 
+#Author: Daniel Brizuela
 class Pieza(models.Model):
     _name = 'gesre.pieza'
 
