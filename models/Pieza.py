@@ -11,6 +11,6 @@ class Pieza(models.Model):
     stock = fields.Integer(string="Stock", required=True)
     
     #Relacion 1 a Muchos con Incidencia
-    #incidencia = fields.One2Many('gesre.incidencia', 'pieza', string="Incidencia")
+    incidencia = fields.One2many('gesre.incidencia', 'pieza', string="Incidencia")
     #Relacion Muchos a 1 con Trabajador
-    #trabajador = fields.Many2One('gesre.trabajador', string="Trabajador")
+    trabajador = fields.Many2one('gesre.trabajador', string="Trabajador")

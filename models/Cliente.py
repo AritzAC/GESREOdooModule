@@ -7,7 +7,7 @@ class Cliente(models.Model):
     _inherit = 'res.users'
 
     #Atributos
-    #fechaRegistro = fields.Date.today(string="Fecha de Registro", required=True)
+    fechaRegistro = fields.Date(string="Fecha de Registro", required=True)
     #Relacion 1 a Muchos con Incidencia
-    #incidencia = fields.One2Many('gesre.incidencia', 'cliente', string="Incidencia")
+    incidencia = fields.One2many('gesre.incidencia', 'cliente', string="Incidencia")
     

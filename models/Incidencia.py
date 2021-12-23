@@ -7,21 +7,21 @@ class Incidencia(models.Model):
     
     estrellas = fields.Integer(string="Estrellas")
     horas = fields.Integer(string="Horas")
-    precio = fields.Double(string="Precio")
-    #tipoIncidencia = fields.Selection([('a', 'ELECTRICO'),
-    #                                  ('b', 'FACHADA'),
-    #                                  ('c', 'FONTANERIA'),
-    #                                  ('d', 'GAS'),
-    #                                  ('e', 'HUMEDAD'),
-    #                                  ('f', 'CERRAJERO'),
-    #                                  ('g', 'REVISION')], string="Tipo Incidencia", required="true")
-    #statusIncidencia = fields.Selection([('a', 'PENDIENTE'),
-    #                                    ('b', 'PROCESO'),
-    #                                    ('c', 'CERRADO')], string="Estado de Incidencia", required="true")                                  
+    precio = fields.Float(string="Precio")
+    tipoIncidencia = fields.Selection([('a', 'ELECTRICO'),
+                                      ('b', 'FACHADA'),
+                                      ('c', 'FONTANERIA'),
+                                      ('d', 'GAS'),
+                                      ('e', 'HUMEDAD'),
+                                      ('f', 'CERRAJERO'),
+                                      ('g', 'REVISION')], string="Tipo Incidencia", required="true")
+    statusIncidencia = fields.Selection([('a', 'PENDIENTE'),
+                                        ('b', 'PROCESO'),
+                                        ('c', 'CERRADO')], string="Estado de Incidencia", required="true")                                  
    
     #Relacion 1 a Muchos con Recoge
-    #recoge = fields.One2Many('gesre.recoge', 'incidencia', string="Recoge")
+    recoge = fields.One2many('gesre.recoge', 'incidencia', string="Recoge")
     #Relacion Mucho a 1 con Pieza
-    #pieza = fields.Many2One('gesre.pieza', string="Pieza")
+    pieza = fields.Many2one('gesre.pieza', string="Pieza")
     #Relacion Mucho a 1 con Cliente
-    #cliente = fields.Many2One('gesre.cliente', string="Cliente") 
+    cliente = fields.Many2one('gesre.cliente', string="Cliente") 

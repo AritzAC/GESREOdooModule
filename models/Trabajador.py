@@ -12,5 +12,5 @@ class Trabajador(models.Model):
     fechaContrato = fields.Date(string="Fecha Contrato", required="true")
     
     #Relaciones
-    #recoge = fields.One2Many('gesre.recoge', 'trabajador', string='Recoge')
-    #pieza = fields.One2Many('gesre.pieza', 'trabajador', string='Pieza')
+    recoge = fields.One2many('gesre.recoge', 'trabajador', string='Recoge')
+    pieza = fields.One2many('gesre.pieza', 'trabajador', string='Pieza')
