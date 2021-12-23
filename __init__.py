@@ -2,7 +2,7 @@
 
 import controllers.controllers
 import models.Pieza
-#import models.Incidencia
-#import models.Recoge
-#import models.Trabajador
-#import models.Cliente
+import models.Incidencia
+import models.Recoge
+import models.Trabajador
+import models.Cliente
