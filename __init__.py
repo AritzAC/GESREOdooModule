@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from . import controllers
-from . import models
+import controllers.controllers
+import models.Pieza
+import models.Incidencia
+import models.Recoge
+import models.Trabajador
+import models.Cliente
