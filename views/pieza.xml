@@ -14,6 +14,9 @@
                 <p class="oe_view_nocontent_create">Crea la primera Pieza</p>
             </field>
         </record>
+        
+        <!--PIEZA VIEW-->
+       
 
         <!-- top level menu: no parent -->
         <menuitem id="main_gesre_menu" name="Gesre"/>
@@ -21,7 +24,7 @@
         <menuitem id="gesre_menu" name="Gesre" parent="main_gesre_menu"/>
         <!-- the following menuitem should appear*after*its parent openacademy_menu and
         *after* itsaction course_list_action -->
-        <menuitem id="piezas_menu" name="Piezas" parent="main_gesre_menu" action="pieza_list_action"/>
+        <menuitem id="piezas_menu" name="Piezas" parent="gesre_menu" action="pieza_list_action"/>
     </data>
 </odoo>
 

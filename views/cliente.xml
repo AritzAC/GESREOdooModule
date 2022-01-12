@@ -21,7 +21,7 @@
         <menuitem id="gesre_menu" name="Gesre" parent="main_gesre_menu"/>
         <!-- the following menuitem should appear*after*its parent openacademy_menu and
         *after* itsaction course_list_action -->
-        <menuitem id="clientes_menu" name="Clientes" parent="main_gesre_menu" action="cliente_list_action"/>
+        <menuitem id="clientes_menu" name="Clientes" parent="gesre_menu" action="cliente_list_action"/>
     </data>
 </odoo>
 
