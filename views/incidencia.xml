@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- window action -->
+        <!-- The following tag is an action definition for a "window action",
+        that is an action opening a view or a set of views -->
+        <record model="ir.actions.act_window" id="incidencia_list_action">
+            <field name="name">Incidencias</field>
+            <field name="res_model">gesre.incidencia</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crea Incidencias</p>
+            </field>
+        </record>
+        <!-- top level menu: no parent -->
+        <menuitem id="main_gesre_menu" name="Gesre"/>
+        <!-- A first level in the left side menu is needed before using action= attribute -->
+        <menuitem id="gesre_menu" name="Gesre" parent="main_gesre_menu"/>
+        <!-- the following menuitem should appear*after*its parent openacademy_menu and
+        *after* itsaction course_list_action -->
+        <menuitem id="incidencias_menu" name="Incidencias" parent="gesre_menu" action="incidencia_list_action"/>
+        <!-- Full id location: action="openacademy.course_list_action"It is not required when it is the same module -->
+    </data>
+</odoo>
+
