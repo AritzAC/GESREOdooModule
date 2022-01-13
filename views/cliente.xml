@@ -14,6 +14,55 @@
                 <p class="oe_view_nocontent_create">Añade el primer cliente</p>
             </field>
         </record>
+        
+        <!--CLIENTE TREE-->
+        <record model="ir.ui.view" id="clientetree">
+            <field name="name">tree.cliente</field>
+            <field name="model">gesre.cliente</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">
+                <tree string="Lista de Clientes">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!--CLIENTE FORM-->
+        <record model="ir.ui.view" id="clienteform">
+            <field name="name">form.cliente</field>
+            <field name="model">gesre.cliente</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">
+                <form string="Formulario de Clientes">
+                    <sheet string="Cliente">
+                        <div>
+                            <h1>
+                                <field name="name" placeholder="Nombre Cliente..."/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="login"/>
+                            </group>
+                            <group>
+                                <field name="email"/>
+                            </group>
+                            <group>
+                                <field name="new_password" string="Contraseña"/>
+                            </group>
+                            <group>
+                                <field name="date" string="Fecha de Registro"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="incidencia_page" string="Incidencias Emitidas">
+                                <field name="incidencia"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 
         <!-- top level menu: no parent -->
         <menuitem id="main_gesre_menu" name="Gesre"/>
