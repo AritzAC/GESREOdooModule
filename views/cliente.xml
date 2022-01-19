@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <!-- window action -->
-        <!-- The following tag is an action definition for a "window action",
-        that is an action opening a view or a set of views -->
-        <!--CLIENTE ACTION-->
-        <record model="ir.actions.act_window" id="cliente_list_action">
-            <field name="name">Clientes</field>
-            <field name="res_model">gesre.cliente</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Añade el primer cliente</p>
-            </field>
-        </record>
-        
         <!--CLIENTE TREE-->
         <record model="ir.ui.view" id="clientetree">
             <field name="name">tree.cliente</field>
@@ -61,6 +47,20 @@
                         </notebook>
                     </sheet>
                 </form>
+            </field>
+        </record>
+        
+        <!-- window action -->
+        <!-- The following tag is an action definition for a "window action",
+        that is an action opening a view or a set of views -->
+        <!--CLIENTE ACTION-->
+        <record model="ir.actions.act_window" id="cliente_list_action">
+            <field name="name">Clientes</field>
+            <field name="res_model">gesre.cliente</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Añade el primer cliente</p>
             </field>
         </record>
 
