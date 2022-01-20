@@ -1,18 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+       
+        
+        <!-- Listado de Incidencias -->
+        <record model="ir.ui.view" id="incidencia_tree">
+            <field name="name">tree.incidencias</field>
+            <field name="model">gesre.incidencia</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">
+            
+                <tree string="Incidencia">
+                    <field name="cliente"/>
+                    <field name="tipoIncidencia"/>
+                    <field name="statusIncidencia"/>
+                </tree>
+           
+            </field>
+        </record>
+        
+        <!-- Formato de Action-->
+        <record model="ir.ui.view" id="incidencia_form">
+            <field name="name">form.incidencias</field>
+            <field name="model">gesre.incidencia</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml"> 
+                <form string="Incidencia">
+                    <sheet string="Incidencia">
+                        <div>
+                            <h1>Incidencia</h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="statusIncidencia"/>
+                            </group>
+                            <group>
+                                <field name="tipoIncidencia"/>
+                            
+                            </group>
+                            <group>
+                                <field name="precio"/>
+                            </group>
+                            <group>
+                                <field name="horas"/>
+                            </group>
+                            <group>
+                                <field name="estrellas"/>
+                            </group>
+                      
+                        </group>
+                        <notebook>
+                            <page name="Incidencia_page" string="Incidencia">
+                                <form string="Incidencia">
+                                    <group colspan="4">
+                                        <group colspan="2" col="2">
+                                            <separator string="Recogida por" colspan="2"/>
+                                            <field name="recoge">
+                                                <field name="trabajador"/>
+                                                <field name="fechaRecogida"/>
+                                            </field>
+                                        </group>
+                                    </group>         
+                                </form>
+                            </page>
+                            <!-- otra page-->
+                            
+                        </notebook>
+                    </sheet>  
+                </form>          
+            </field>
+        </record>
+        
         <!-- window action -->
         <!-- The following tag is an action definition for a "window action",
         that is an action opening a view or a set of views -->
         <record model="ir.actions.act_window" id="incidencia_list_action">
             <field name="name">Incidencias</field>
             <field name="res_model">gesre.incidencia</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="help" type="html">
+            <!--<field name="help" type="html">
                 <p class="oe_view_nocontent_create">Crea Incidencias</p>
-            </field>
+            </field>-->
         </record>
+        
+       
         <!-- top level menu: no parent -->
         <menuitem id="main_gesre_menu" name="Gesre"/>
         <!-- A first level in the left side menu is needed before using action= attribute -->
