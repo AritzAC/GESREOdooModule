@@ -7,7 +7,7 @@
             <field name="model">gesre.pieza</field>
             <field name="priority" eval="16"/>
             <field name="arch" type="xml">
-                <tree string="Lista de Piezas">
+                <tree string="Piezas">
                     <field name="nombre"/>
                     <field name="descripcion"/>
                 </tree>
@@ -20,7 +20,7 @@
             <field name="model">gesre.pieza</field>
             <field name="priority" eval="16"/>
             <field name="arch" type="xml">
-                <form string="Formulario de Piezas">
+                <form string="Piezas">
                     <sheet string="Pieza">
                         <div>
                             <h1>
@@ -51,6 +51,7 @@
             </field>
         </record>
         
+        <!--PIEZA SEARCH-->
         <record model="ir.ui.view" id="pieza_search_view">
             <field name="name">gesre.pieza.search</field>
             <field name="model">gesre.pieza</field>
