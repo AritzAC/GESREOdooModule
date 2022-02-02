@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <report id="report_pieza" model="gesre.pieza" string="Reporte de Pieza" report_type="qweb-pdf" name="gesre.report_pieza_view" file="gesre.report_pieza"/>
+    <template id="report_pieza_view">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Descripcion</th>
+                                    <th>Stock</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p t-field="doc.nombre"/>
+                                    </td>
+                                    <td>
+                                        <p t-field="doc.descripcion"/>
+                                    </td>
+                                    <td>
+                                        <p t-field="doc.stock"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
