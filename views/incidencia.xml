@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-       
+        <!-- Listado de Incidencias -->
+        <record model="ir.ui.view" id="incidencia_search">
+            <field name="name">search.incidencias</field>
+            <field name="model">gesre.incidencia</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">             
+                <search string="Filtrado">
+                    <field name="tipoIncidencia"/>
+                    <field name="statusIncidencia"/>
+                </search>          
+            </field>
+        </record>
         
         <!-- Listado de Incidencias -->
         <record model="ir.ui.view" id="incidencia_tree">
@@ -9,12 +20,13 @@
             <field name="model">gesre.incidencia</field>
             <field name="priority" eval="16"/>
             <field name="arch" type="xml">
-            
+                
                 <tree string="Incidencia">
                     <field name="cliente"/>
                     <field name="tipoIncidencia"/>
                     <field name="statusIncidencia"/>
                 </tree>
+                
            
             </field>
         </record>
@@ -28,7 +40,7 @@
                 <form string="Incidencia">
                     <sheet string="Incidencia">
                         <div>
-                            <h1>Incidencia</h1>
+                            <h1> Incidencia: <field name="id"/></h1>
                         </div>
                         <group>
                             <group>
@@ -36,7 +48,6 @@
                             </group>
                             <group>
                                 <field name="tipoIncidencia"/>
-                            
                             </group>
                             <group>
                                 <field name="precio"/>
@@ -47,24 +58,45 @@
                             <group>
                                 <field name="estrellas"/>
                             </group>
+                            <group>
+                                <field name="cliente"/>
+                            </group>
+                            <group>
+                                <field name="pieza"/>
+                            </group>
                       
                         </group>
                         <notebook>
-                            <page name="Incidencia_page" string="Incidencia">
+                            <page name="RecogidaPor_page" string="Recogida por">
+                                <tree string="Incidencia">
+                                    <group colspan="4">
+                                        <group colspan="2" col="2">
+                                            <separator string="Pieza" colspan="2"/>
+                                            <field name="recoge">
+                                                <tree string="PEPE">
+                                                    <field name="trabajador"/>
+                                                    <field name="fechaRecogida"/>
+                                                </tree>
+                                            </field>
+                                        </group>
+                                    </group>         
+                                </tree>
+                            </page>
+                            <page name="Pieza_page" string="Pieza">
                                 <form string="Incidencia">
                                     <group colspan="4">
                                         <group colspan="2" col="2">
                                             <separator string="Recogida por" colspan="2"/>
-                                            <field name="recoge">
-                                                <field name="trabajador"/>
-                                                <field name="fechaRecogida"/>
+                                            <field name="pieza">
+                                                <form string="PEPE">
+                                                    <field name="nombre"/>
+                                                    <field name="stock"/>
+                                                </form>
                                             </field>
                                         </group>
                                     </group>         
                                 </form>
-                            </page>
-                            <!-- otra page-->
-                            
+                            </page>                           
                         </notebook>
                     </sheet>  
                 </form>          
