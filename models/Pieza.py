@@ -15,7 +15,7 @@ class Pieza(models.Model):
     #Relacion 1 a Muchos con Incidencia
     incidencia = fields.One2many('gesre.incidencia', 'pieza', string="Incidencia")
     #Relacion Muchos a 1 con Trabajador
-    trabajador = fields.Many2one('gesre.trabajador', string="Trabajador")
+    trabajador = fields.Many2one('res.users', string="Trabajador")
     
     #Validaciones
     #Numero negativo y longitud en Stock

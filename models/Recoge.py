@@ -11,4 +11,4 @@ class Recoge(models.Model):
     #Relacion Muchos a 1 con Incidencias
     incidencia = fields.Many2one('gesre.incidencia', string="Incidencia")
     #Relacion Muchos a 1 con Trabajador
-    trabajador = fields.Many2one('gesre.trabajador', string="Trabajador")
+    trabajador = fields.Many2one('res.users', string="Trabajador")

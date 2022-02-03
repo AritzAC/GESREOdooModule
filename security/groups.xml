@@ -1,0 +1,10 @@
+<odoo>
+     <data>
+        <record id="gesre_total_control" model="res.groups">
+            <field name="name">GESRE Control Total</field>
+        </record>
+        <record id="gesre_only_read" model="res.groups">
+            <field name="name">GESRE Solo Lectura</field>
+        </record>
+     </data>
+ </odoo>
