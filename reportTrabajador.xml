@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <report id="report_trabajador" model="gesre.trabajador" string="Informe de Trabajador" report_type="qweb-html" name="gesre.report_trabajador_view" file="gesre.report_trabajador"/>
+    <template id="report_trabajador_view">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Login</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p t-field="doc.login"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
