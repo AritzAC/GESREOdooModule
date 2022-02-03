@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <report id="report_trabajador" model="res.users" string="Informe de Trabajador" report_type="qweb-html" name="gesre.report_trabajador_view" file="gesre.report_trabajador"/>
+    <report id="report_trabajador" model="res.users" string="Informe de Trabajador" report_type="qweb-pdf" name="gesre.report_trabajador_view" file="gesre.report_trabajador"/>
     <template id="report_trabajador_view">
         <t t-call="report.html_container">
             <t t-foreach="docs" t-as="doc">

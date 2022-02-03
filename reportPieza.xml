@@ -8,10 +8,16 @@
                     <div class="page">
                         <table class="table table-striped">
                             <thead>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <h1>Informe de Piezas</h1>
                                 <tr>
                                     <th>Nombre</th>
                                     <th>Descripcion</th>
                                     <th>Stock</th>
+                                    <th>Incidencias</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -24,6 +30,15 @@
                                     </td>
                                     <td>
                                         <p t-field="doc.stock"/>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <t t-foreach="doc.incidencia" t-as="incidencia">
+                                                <li>
+                                                    <span t-field="incidencia.tipoIncidencia"/>
+                                                </li>
+                                            </t>
+                                        </ul>
                                     </td>
                                 </tr>
                             </tbody>
