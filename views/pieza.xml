@@ -1,18 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+        <!--PIEZA TREE-->
+        <record model="ir.ui.view" id="pieza_tree">
+            <field name="name">gesre.pieza.tree</field>
+            <field name="model">gesre.pieza</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">
+                <tree string="Piezas">
+                    <field name="nombre"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!--PIEZA FORM-->
+        <record model="ir.ui.view" id="pieza_form">
+            <field name="name">gesre.pieza.form</field>
+            <field name="model">gesre.pieza</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">
+                <form string="Piezas">
+                    <sheet string="Pieza">
+                        <div>
+                            <h1>
+                                <field name="nombre" placeholder="Nombre Pieza..."/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="descripcion" placeholder="Añade una descripción para esta pieza"/>
+                                <field name="stock"/>
+                            </group>
+                            <group>
+                                <field name="trabajador" string="Creado por "/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="incidencia_page" string="Incidencias con esta Pieza">
+                                <field name="incidencia">
+                                    <tree>
+                                        <field name="tipoIncidencia"/>
+                                        <field name="statusIncidencia"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!--PIEZA SEARCH-->
+        <record model="ir.ui.view" id="pieza_search_view">
+            <field name="name">gesre.pieza.search</field>
+            <field name="model">gesre.pieza</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre"/>
+                </search>
+            </field>
+        </record>
+        
         <!-- window action -->
         <!-- The following tag is an action definition for a "window action",
         that is an action opening a view or a set of views -->
-      <record model="ir.actions.act_window" id="pieza_list_action">
+        <!--PIEZA ACTION-->
+        <record model="ir.actions.act_window" id="pieza_list_action">
             <field name="name">Piezas</field>
             <field name="res_model">gesre.pieza</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">Crea la primera Pieza</p>
             </field>
         </record>
+       
+        <!-- MENUS -->
         <!-- top level menu: no parent -->
         <menuitem id="main_gesre_menu" name="Gesre"/>
         <!-- A first level in the left side menu is needed before using action= attribute-->
@@ -23,4 +86,3 @@
         <!-- Full id location: action="openacademy.course_list_action"It is not required when it is the same module -->
     </data>
 </odoo>
-
