@@ -30,6 +30,7 @@
         'views/pieza.xml',
         'reportPieza.xml',
         'views/incidencia.xml',
+        'reportIncidencia.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

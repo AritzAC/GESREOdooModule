@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <report id="report_incidencia" model="gesre.incidencia" string="Reporte de Incidencia" report_type="qweb-pdf" name="gesre.report_incidencia_view" file="gesre.report_incidencia"/>
+    <template id="report_incidencia_view">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Tipo Incidencia</th>
+                                    <th>Estado Incidencia</th>
+                                    <th>Precio</th>
+                                    <th>Estrellas</th>
+                                    <th>Horas</th>
+                                </tr>
+                            </thead>
+                             <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <tbody>                            
+                                <tr>
+                                    <td>
+                                        <p t-field="doc.tipoIncidencia"/>
+                                    </td>
+                                    <td>
+                                        <p t-field="doc.statusIncidencia"/>
+                                    </td>                                   
+                                    <td>
+                                        <p t-field="doc.precio"/>
+                                    </td>
+                                    <td>
+                                        <p t-field="doc.estrellas"/>
+                                    </td>
+                                    <td>
+                                        <p t-field="doc.horas"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
