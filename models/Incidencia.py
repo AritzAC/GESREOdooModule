@@ -1,13 +1,17 @@
 # -*- coding: utf-8 -*-
+from odoo import api
+from odoo import exceptions
 from odoo import fields
 from odoo import models
+ 
 
 class Incidencia(models.Model):
     _name = 'gesre.incidencia'
     
-    estrellas = fields.Integer(string="Estrellas")
-    horas = fields.Integer(string="Horas")
-    precio = fields.Float(string="Precio")
+    id = fields.Integer(string="id")
+    estrellas = fields.Integer(string="Estrellas", domain="[('Estrellas','>',0)]")
+    horas = fields.Integer(string="Horas", domain="[('Horas','>',0)]")
+    precio = fields.Float(string="Precio", domain="[('Precio','>',0)]")
     tipoIncidencia = fields.Selection([('a', 'ELECTRICO'),
                                       ('b', 'FACHADA'),
                                       ('c', 'FONTANERIA'),
@@ -25,3 +29,25 @@ class Incidencia(models.Model):
     pieza = fields.Many2one('gesre.pieza', string="Pieza")
     #Relacion Mucho a 1 con Cliente
     cliente = fields.Many2one('gesre.cliente', string="Cliente") 
+    
+    #Validacion
+    @api.constrains('estrellas')
+    def _check_estrellasNum(self):
+        if self.estrellas > 5:
+            raise exceptions.ValidationError("las Estrellas no pueden ser mas de 5")
+    #Validacion
+    @api.onchange('horas')
+    def _check_horasNum(self):
+        if self.horas > 99:
+            return {'warning':{
+                'title': "Incorrect 'Estrellas' value",
+                'message': "el numero de horas no puede pasar de 99",
+            },
+            }
+     #Validacion
+    @api.constrains('horas')
+    def _check_HorasNum_Save(self):
+       if self.horas > 99:
+            raise exceptions.ValidationError( "el numero de horas no puede pasar de 99")
+
+            
