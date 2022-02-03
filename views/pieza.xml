@@ -78,10 +78,11 @@
         <!-- MENUS -->
         <!-- top level menu: no parent -->
         <menuitem id="main_gesre_menu" name="Gesre"/>
-        <!-- A first level in the left side menu is needed before using action= attribute -->
-        <menuitem id="gesre_menu" name="Gesre" parent="main_gesre_menu"/>
+        <!-- A first level in the left side menu is needed before using action= attribute-->
+        <menuitem id="gesre_menu" name="Gesre" parent="main_gesre_menu"/> 
         <!-- the following menuitem should appear*after*its parent openacademy_menu and
-        *after* itsaction course_list_action -->
-        <menuitem id="piezas_menu" name="Piezas" parent="gesre_menu" action="pieza_list_action"/>
+        *after* itsaction course_list_action-->
+        <menuitem id="piezas_menu" name="Piezas" parent="main_gesre_menu" action="pieza_list_action"/> 
+        <!-- Full id location: action="openacademy.course_list_action"It is not required when it is the same module -->
     </data>
 </odoo>

@@ -29,6 +29,7 @@
         'views/templates.xml',
         'views/pieza.xml',
         'reportPieza.xml',
+        'views/incidencia.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
