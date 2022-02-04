@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        
+        <record model="ir.ui.view" id="trabajadores_tree_view">
+            <field name="name">trabajador.tree</field>
+            <field name="model">res.users</field>
+           
+            <field name="arch" type="xml">
+                <tree string="Trabajadores Tree">
+                    <field name="login"/>
+                    <field name="email"/>
+                    <field name="name"/>
+                    <field name="precioHora" string="Precio Hora"/>
+                    <field name="fechaContrato"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="trabajadores_form_view">
+            <field name="name">trabajador.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_simple_form"/>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="Info adicional trabajador">
+                            <field name="login"/>
+                            <field name="precioHora" string="Precio Hora"/>
+                            <field name="fechaContrato"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="trabajador_sheet_view">
+            <field name="name">trabajador.sheet</field>
+            <field name="model">res.users</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet string="Trabajador Sheet">
+                        <group>
+                            <h1>Trabajador</h1>
+                        </group>
+                        <group>
+                            <field name="user_id" string="Id"/>
+                            <field name="login"/>
+                            <field name="email"/>
+                            <field name="name"/>
+                            <field name="password"/>
+                            <field name="precioHora" string="Precio Hora"/>
+                            <field name="fechaContrato"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!-- window action -->
+        <!-- The following tag is an action definition for a "window action",
+        that is an action opening a view or a set of views -->
+        <record model="ir.actions.act_window" id="trabajador_list_action">
+            <field name="name">Trabajador</field>
+            <field name="res_model">res.users</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!-- top level menu: no parent -->
+        <menuitem id="main_gesre_menu" name="Gesre"/>
+        <!-- A first level in the left side menu is needed before using action= attribute -->
+        <menuitem id="gesre_menu" name="Gesre" parent="main_gesre_menu"/>
+        <!-- the following menuitem should appear*after*its parent openacademy_menu and
+        *after* itsaction course_list_action -->
+        <menuitem id="trabajadores_menu" name="Trabajadores" parent="gesre_menu" action="trabajador_list_action"/>
+        <!-- Full id location: action="openacademy.course_list_action"It is not required when it is the same module -->
+    </data>
+</odoo>

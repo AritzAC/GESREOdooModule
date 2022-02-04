@@ -24,13 +24,16 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/groups.xml',
+        'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
         'views/pieza.xml',
         'reportPieza.xml',
         'views/incidencia.xml',
         'reportIncidencia.xml',
+        'views/trabajador.xml',
+        'reportTrabajador.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

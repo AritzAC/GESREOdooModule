@@ -1,2 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_gesre_gesre,gesre.gesre,model_gesre_gesre,,1,0,0,0
+users_total_control,gesre.gesre,model_res_users,gesre.gesre_total_control,1,1,1,1
+pieza_total_control,gesre.gesre,model_gesre_pieza,gesre.gesre_total_control,1,1,1,1
+incidencia_total_control,gesre.gesre,model_gesre_incidencia,gesre.gesre_total_control,1,1,1,1
+users_only_read,gesre.gesre,model_res_users,gesre.gesre_only_read,1,0,0,0
+pieza_only_read,gesre.gesre,model_gesre_pieza,gesre.gesre_only_read,1,0,0,0
+incidencia_only_read,gesre.gesre,model_gesre_incidencia,gesre.gesre_only_read,1,0,0,0

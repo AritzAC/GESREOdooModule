@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <report id="report_trabajador" model="res.users" string="Informe de Trabajador" report_type="qweb-pdf" name="gesre.report_trabajador_view" file="gesre.report_trabajador"/>
+    <template id="report_trabajador_view">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Login</th>
+                                    <th>Nombre</th>
+                                    <th>Correo</th>
+                                    <th>Precio Hora</th>
+                                    <th>Fecha de Contrato</th>
+                                </tr>
+                            </thead>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p t-field="doc.login"/>
+                                    </td>
+                                    <td>
+                                        <p t-field="doc.name"/>
+                                    </td>
+                                    <td>
+                                        <p t-field="doc.email"/>
+                                    </td>
+                                    <td>
+                                        <p t-field="doc.precioHora"/>
+                                    </td>
+                                    <td>
+                                        <p t-field="doc.fechaContrato"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
