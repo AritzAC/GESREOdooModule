@@ -8,7 +8,6 @@ from odoo import models
 class Incidencia(models.Model):
     _name = 'gesre.incidencia'
     
-    id = fields.Integer(string="id")
     estrellas = fields.Integer(string="Estrellas", domain="[('Estrellas','>',0)]")
     horas = fields.Integer(string="Horas", domain="[('Horas','>',0)]")
     precio = fields.Float(string="Precio", domain="[('Precio','>',0)]")
@@ -28,7 +27,7 @@ class Incidencia(models.Model):
     #Relacion Mucho a 1 con Pieza
     pieza = fields.Many2one('gesre.pieza', string="Pieza")
     #Relacion Mucho a 1 con Cliente
-    cliente = fields.Many2one('gesre.cliente', string="Cliente") 
+    cliente = fields.Many2one('res.users', string="Cliente") 
     
     #Validacion
     @api.constrains('estrellas')
